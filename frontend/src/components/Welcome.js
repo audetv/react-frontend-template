@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './Welcome.module.css';
+import React from 'react'
+import styles from './Welcome.module.css'
 
 function Welcome() {
   return (
@@ -7,7 +7,7 @@ function Welcome() {
       <h1>Frontend Template</h1>
       <p>terratensor/svodd</p>
     </div>
-  );
+  )
 }
 
-export default Welcome;
+export default Welcome
