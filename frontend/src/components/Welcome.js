@@ -1,9 +1,9 @@
 import React from 'react';
-import './Welcome.css';
+import styles from './Welcome.module.css';
 
 function Welcome() {
   return (
-    <div className="welcome">
+    <div className={styles.welcome}>
       <h1>Frontend Template</h1>
       <p>terratensor/svodd</p>
     </div>
