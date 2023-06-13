@@ -6,6 +6,7 @@ init-ci: docker-down-clear \
 up: docker-up
 down: docker-down
 restart: down up
+test: frontend-test
 
 docker-up:
 	docker compose up -d
