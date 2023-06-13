@@ -6,6 +6,7 @@ init-ci: docker-down-clear \
 up: docker-up
 down: docker-down
 restart: down up
+lint: frontend-lint
 test: frontend-test
 
 docker-up:
@@ -13,9 +14,6 @@ docker-up:
 
 docker-down:
 	docker compose down --remove-orphans
-
-frontend-ready:
-	docker run --rm -v ${PWD}/frontend:/app -w /app alpine touch .ready
 
 docker-down-clear:
 	docker compose down -v --remove-orphans
@@ -43,8 +41,8 @@ frontend-ready:
 frontend-check: frontend-lint frontend-test
 
 frontend-lint:
-	docker compose run --rm frontend-node-cli yarn eslint
-	docker compose run --rm frontend-node-cli yarn stylelint
+	docker compose run --rm frontend-node-cli yarn lint
+	#docker compose run --rm frontend-node-cli yarn stylelint
 
 frontend-eslint-fix:
 	docker compose run --rm frontend-node-cli yarn eslint-fix
